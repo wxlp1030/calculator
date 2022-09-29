@@ -1,17 +1,14 @@
 <view class="box">
   <view class="res">
-    <view class="number {{hasChar ? 'prev' : ''}}" wx:if="{{number}}">{{number}}</view>
-    <view class="number" wx:if="{{next}}">{{next}}</view>
+    <view class="number {{prev ? 'prev' : ''}}" wx:if="{{prev}}">{{prev}}</view>
+    <view class="number" wx:if="{{number}}">{{number}}</view>
   </view>
   <view class="number-box">
     <view class="item-box">
-      <view class="item" wx:for="{{numbers}}" data-value="{{item}}" bindtap="click">{{item}}</view>
+      <view class="item" wx:for="{{numbers}}" data-value="{{item}}" wx:key="index" bindtap="click">{{item}}</view>
     </view>
     <view class="char">
-      <view class="item char-item" wx:for="{{chars}}" data-value="{{item}}" bindtap="click">{{item}}</view>
+      <view class="item char-item" wx:for="{{chars}}" data-value="{{item}}" wx:key="index" bindtap="click">{{item}}</view>
     </view>
-
-
-
   </view>
 </view>
